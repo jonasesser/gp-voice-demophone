@@ -68,13 +68,9 @@ export class GPPhone implements ViewModel {
         alt.emit('objectAttacher:attachObjectAnimated', 'phone', false);
         open = true;
         WebViewController.openPages([PAGE_NAME]);
-        WebViewController.on(View_Events_GPVoice_Phone.Ready, GPPhone.ready);
-        WebViewController.on(View_Events_GPVoice_Phone.Close, GPPhone.close);
+        WebViewController.on("DemoPhone:Ready", GPPhone.ready);
+        WebViewController.on("DemoPhone:Close", GPPhone.close);
 
-        WebViewController.on(View_Events_GPVoice_Phone_Dial.Ready, GPPhone.ready_Dial);
-        WebViewController.on(View_Events_GPVoice_Phone_Dial.Call, GPPhone.phoneCall);
-        WebViewController.on(View_Events_GPVoice_Phone_Dial.Accept, GPPhone.acceptCall);
-        WebViewController.on(View_Events_GPVoice_Phone_Dial.Decline, GPPhone.declineCall);
 
         WebViewController.focus();
         WebViewController.showCursor(true);
@@ -85,8 +81,7 @@ export class GPPhone implements ViewModel {
     static ready() {}
 
     static async ready_Dial() {
-        const view = await WebViewController.get();
-        view.emit(View_Events_GPVoice_Phone_Dial.SetProp, 'activeSimNumber', activeSimNumber);
+       //to implement
     }
 
     static activateSim(simNumber: string) {
@@ -94,27 +89,27 @@ export class GPPhone implements ViewModel {
     }
 
     static unknown(message: string) {
-        WebViewController.emit(View_Events_GPVoice_Phone_Dial.Unknown, message);
+        //to implement
     }
 
     static ringing(callID: string, number: string, callerNumber: string) {
-        WebViewController.emit(View_Events_GPVoice_Phone_Dial.Ringing, callID, number, callerNumber);
+        //to implement
     }
 
     static incomingCall(callID: string, number: string, callerNumber: string) {
-        WebViewController.emit(View_Events_GPVoice_Phone_Dial.Call, callID, number, callerNumber);
+        //to implement
     }
 
     static phoneCall(callernumber: string, calleenumber: string) {
-        alt.emitServer(View_Events_GPVoice_Phone.Call, callernumber, calleenumber);
+        //to implement
     }
 
     static acceptCall(callID: string) {
-        alt.emitServer(View_Events_GPVoice_Phone.Accept, callID);
+        //to implement
     }
 
     static declineCall(callID: string) {
-        alt.emitServer(View_Events_GPVoice_Phone.Decline, callID);
+        //to implement
     }
 
     static closeButLeaveInHand() {
