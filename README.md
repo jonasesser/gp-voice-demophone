@@ -1,6 +1,9 @@
 # gp-voice-demophone
 A migrated phone to vue3 as demonstration
 
+This is just the frame and app functionality for the athena framework.
+A working phone with alt:v voice and saltychat support is inlcuded in the voice-plugin: https://mygp.gumroad.com/l/altv-athena-plugin-voice
+
 # License
 
 MIT License
