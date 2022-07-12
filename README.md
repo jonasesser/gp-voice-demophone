@@ -15,7 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Partly Licenses
 
-# License for phone design (Only DemoPhone.vue)
+## License for phone design (Only DemoPhone.vue)
 
 Original repository: https://github.com/jonasesser/altV-smartphone
 
