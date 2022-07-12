@@ -45,23 +45,16 @@ export class GPPhone implements ViewModel {
     }
 
     static async toggle(): Promise<void> {
-        alt.logWarning('Toggle Phone');
-        if (alt.Player.local.meta.inventory) {
-            let phoneItem = alt.Player.local.meta.inventory.find((item) => item.name === 'Mobilephone');
-            if (phoneItem) {
-                if (!open && !onscreen) {
-                    onscreen = true;
-                    GPPhone.open();
-                } else if (onscreen) {
-                    onscreen = false;
-                    GPPhone.closeButLeaveInHand();
-                } else {
-                    GPPhone.close();
-                }
-            } else {
-                GPPhone.close();
-            }
-        }
+        alt.logWarning('Toggle Phone');        
+        if (!open && !onscreen) {
+            onscreen = true;
+            GPPhone.open();
+        } else if (onscreen) {
+            onscreen = false;
+            GPPhone.closeButLeaveInHand();
+        } else {
+            GPPhone.close();
+        }           
     }
 
     static async open(): Promise<void> {
